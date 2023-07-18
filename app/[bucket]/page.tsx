@@ -1,7 +1,7 @@
 import { EXPERIMENT, UID_COOKIE, GROUP_PARAM_FALLBACK } from "@/lib/constants";
 import api from "@/lib/statsig-api";
 import Link from "next/link";
-import Button from "./Button";
+import Button from "../Button";
 
 export async function generateStaticParams() {
   const groups: string[] = (await api.getBuckets(EXPERIMENT))
@@ -45,17 +45,18 @@ export default function Page({ params }: { params: { bucket: string } }) {
           <p className="pt-4">
             The variation's bucket is statically generated at build time in a
             /bucket page. All changes for the experiment should be made in this
-            page. A page that matches the name of the control bucket also
-            exists. The middleware pulls the bucket names using the Statsig SDK
-            and redirects traffic to the corresponding pages.
+            page. The root page is the control in the experiment. The middleware
+            pulls the bucket names using the Statsig SDK and redirects traffic
+            to the corresponding page based on which bucket a visitor is
+            assigned to.
           </p>
           <div className="pt-4">
             <p>
               You are currently assigned to the{" "}
               <span className="text-red-500">{bucket}</span> bucket. Click the
-              button below and refresh the page to be put in a different bucket.
-              The button resets the cookie. Upon refreshing the page, the
-              middleware will run and re-bucket you.
+              button below to reset your cookie and refresh the page. Clicking
+              the button will trigger the middleware to run and will re-bucket
+              you.
             </p>
             <Button />
           </div>
