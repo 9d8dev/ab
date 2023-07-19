@@ -14,64 +14,63 @@ Coming soon...
 
 You can choose from one of the following two methods to use this repository:
 
-One-Click Deploy
-Deploy the example using Vercel:
+**One-Click Deploy using Vercel:**
 
-Deploy with Vercel
-
-Clone and Deploy
-Execute `create-next-app` with [npm](https://docs.npmjs.com/cli/v9/commands/npm-init) or [Yarn](https://classic.yarnpkg.com/en/docs/cli/create/) to bootstrap the example:
-
-npx create-next-app --example https://github.com/vercel/examples/tree/main/edge-middleware/ab-testing-statsig
+Put the one click deploy with vercel right here...
 
 ### or
 
-yarn create next-app --example https://github.com/vercel/examples/tree/main/edge-middleware/ab-testing-statsig
-Set up environment variables
-Log in to the Statsig console and navigate to Settings -> API KEYS. Then, copy .env.example to .env.local and fill it in with your Client, Server and Console API keys:
+**Clone this Repository**
 
-cp .env.example .env.local
-Install the Statsig Vercel Integration for your project. Then fill in .env.local with the provided Edge Config Connection String and Edge Config Item Key.
+```bash
+git clone https://github.com/9d8dev/ab-testing-statsig-app-router-template.git
 
-Next, run Next.js in development mode:
+cd ab-testing-statsig-app-router-template
 
 npm install
+
 npm run dev
+```
 
-### or
+### Setting up environment variables
 
-yarn
-yarn dev
-Deploy it to the cloud with Vercel (Documentation).
+Login to the [Statsig console](https://console.statsig.com/) and enable the pro plan to access experimentation features.
 
-## Getting Started
+Navigate to `Settings` -> `Keys and Environments`. Add all three API keys (client, server, and console) to your `env` file respectively.
 
-To get started with the `twilio-next-template`:
+Install the [Statsig Vercel Integration](https://vercel.com/integrations/statsig) for your project. It will give you the Edge Config Connection String and Edge Config Item Key. Place these in your `env` file respectively.
 
-1. Clone the repository to your local machine
-2. Run the following commands:
+## Creating an Experiment
 
-   ```bash
-   npm i
-   ```
+To create an experiment, sign in to Statsig and navigate to `Experiments` in the sidebar menu. Create a new experiment and name it whatever you like. Enter additional optional information. At the end of the form, select `User ID` for the ID Type.
 
-3. Add a `.env` file with your own API keys from Twilio. To find Twilio API keys, navigate to the [Twilio Console](https://twilio.com/console). You’ll be able to find your Account SID and Auth Token on the main dashboard of the console. Copy these values and paste them into your `.env` file as the values for TWILIO_SID and TWILIO_AUTH_TOKEN respectively. You will also need to create a "[verify service](https://www.twilio.com/console/verify/services)" in the Twilio console. Find the service ID of your Twilio service to paste into VERIFICATION_SID. Example names of the ` env` variables are located in the `.env.example` file in the root directory of this repository.
-4. Next, run the following command:
-   ```bash
-   npm run dev
-   ```
-   Then open `http://localhost:3000` with your browser to see the result.
+Within your NextJS project, open `/lib/constants.ts`. Copy the experiment name from Statsig and paste it as the value for the `EXPERIMENT` constant.
+
+EXAMPLE:
+
+```
+export const EXPERIMENT = nextjs_test;
+```
+
+Name your buckets. For simplicity, keep the name of your control variable as the default `control`. It doesn't matter what your name your variation, this page will be statically generated at build time. _See image below for example._
+
+When you have completed your configuration, you can start the experiment.
+
+## Making Changes to Variations
+
+In this example, the `app/[bucket]/page.js` file is the variation page whereas the root `app/page.js` file is the control page. In other words, the root page is your original page while the bucket page contains the changes you want to test. With the configuration in this project, traffic will be split between these two pages. Make any changes to your page in the `app/[bucket]/page.js` file.
+
+## Statsig Events and Metrics
+
+While this example does not yet support metrics, [Statsig has a client-side React library](https://docs.statsig.com/client/reactSDK) for easily managing metrics and custom events. This allows you to send custom client events from pages that are wrapped in the Statsig provider.
+
+## Middleware
+
+This example utilizes middleware to direct traffic to the proper variation. See `middleware.ts` for more details.
 
 ## Structure
 
-The `twilio-next-template` application consists of the following primary directories:
-
-- `app`: Contains the main application code including:
-  - `api/twilio/route.js`: The API route for managing text code verification. Includes two route handlers for `GET` and `POST` requests.
-  - `globals.css`: Contains the global CSS styles for the application.
-  - `layout.js`: Contains the layout components for the application.
-  - `page.js`: Contains the main page components for the application.
-- `public`: Contains static files used across the application, such as SVG files for visual elements.
+Include markdown structure of app...
 
 ## Contributions
 
@@ -83,5 +82,5 @@ This project is licensed under the MIT License. See the LICENSE file in the repo
 
 ## Contact
 
-For more information, check out the creators at [9d8.dev](https://9d8.dev).
-Made by 9d8, a development studio by [Cameron Youngblood](https://github.com/youngbloodcyb) and [Bridger Tower](https://github.com/brijr).
+For more information, check out the creators at [Cameron Youngblood](https://github.com/youngbloodcyb) and [Bridger Tower](https://github.com/brijr).
+Made by [9d8](https://9d8.dev) and [Ampry](https://ampry.com).
