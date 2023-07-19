@@ -46,6 +46,9 @@ To create an experiment, sign in to Statsig and navigate to `Experiments` in the
 
 Within your NextJS project, open `/lib/constants.ts`. Copy the experiment name from Statsig and paste it as the value for the `EXPERIMENT` constant.
 
+![example](https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/cacf446e-af47-419c-8024-79dfa797d301)
+
+
 EXAMPLE:
 
 ```
@@ -53,6 +56,8 @@ export const EXPERIMENT = nextjs_test;
 ```
 
 Name your buckets. For simplicity, keep the name of your control variable as the default `control`. It doesn't matter what your name your variation, this page will be statically generated at build time. _See image below for example._
+
+<img width="1502" alt="Screenshot 2023-07-18 at 11 07 58 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/a964091e-0d84-450a-92fc-c0951241fecd">
 
 When you have completed your configuration, you can start the experiment.
 
