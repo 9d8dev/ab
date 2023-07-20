@@ -43,12 +43,12 @@ export default function Page({ params }: { params: { bucket: string } }) {
             experiment.
           </p>
           <p className="pt-4">
-            The variation's bucket is statically generated at build time in a
-            /bucket page. All changes for the experiment should be made in this
-            page. The root page is the control in the experiment. The middleware
-            pulls the bucket names using the Statsig SDK and redirects traffic
-            to the corresponding page based on which bucket a visitor is
-            assigned to.
+            The variation&apos;s bucket is statically generated at build time in
+            a /bucket page. All changes for the experiment should be made in
+            this page. The root page is the control in the experiment. The
+            middleware pulls the bucket names using the Statsig SDK and
+            redirects traffic to the corresponding page based on which bucket a
+            visitor is assigned to.
           </p>
           <div className="pt-4">
             <p>
