@@ -2,6 +2,7 @@ import { EXPERIMENT, UID_COOKIE, GROUP_PARAM_FALLBACK } from "@/lib/constants";
 import api from "@/lib/statsig-api";
 import Link from "next/link";
 import Button from "./Button";
+import Logo from "./Logo";
 
 export async function generateStaticParams() {
   const groups: string[] = (await api.getBuckets(EXPERIMENT))
@@ -17,6 +18,9 @@ export default function Page({ params }: { params: { bucket: string } }) {
   return (
     <main className="flex min-h-screen flex-col container divide-y">
       <section className="mt-6 py-4">
+        <div className="flex justify-center items-center mb-6">
+          <Logo />
+        </div>
         <div className="space-y-4 divide-y">
           <h1 className="text-xl font-bold uppercase">
             A/B Testing with NextJS, Vercel, and Statsig
