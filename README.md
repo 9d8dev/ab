@@ -8,7 +8,9 @@ The `ab-testing-statsig-app-router-template` is a simple and efficient way to ge
 
 ## Demo
 
-Coming soon...
+[statsig-ab-testing.vercel.app](https://statsig-ab-testing.vercel.app/)
+
+Click the `Reset Cookie` button to refresh the cookie and re-bucket you into a new experiment group.
 
 ## How to Use
 
