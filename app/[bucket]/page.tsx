@@ -20,6 +20,9 @@ export default function Page({ params }: { params: { bucket: string } }) {
       <section className="mt-6 py-4">
         <div className="flex justify-center items-center mb-6">
           <Logo />
+          <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Fab-testing-statsig-app-router-template&env=EDGE_CONFIG,EDGE_CONFIG_ITEM_KEY,STATSIG_SERVER_API_KEY,STATSIG_CONSOLE_API_KEY,NEXT_PUBLIC_STATSIG_CLIENT_KEY&project-name=ab-testing&repository-name=ab-testing">
+            <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+          </a>
         </div>
         <div className="space-y-4 divide-y">
           <h1 className="text-xl font-bold uppercase">

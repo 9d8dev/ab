@@ -20,7 +20,7 @@ You can choose from one of the following two methods to use this repository:
 
 **One-Click Deploy using Vercel:**
 
-Put the one click deploy with vercel right here...
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Fab-testing-statsig-app-router-template&env=EDGE_CONFIG,EDGE_CONFIG_ITEM_KEY,STATSIG_SERVER_API_KEY,STATSIG_CONSOLE_API_KEY,NEXT_PUBLIC_STATSIG_CLIENT_KEY&project-name=ab-testing&repository-name=ab-testing)
 
 ### or
 
