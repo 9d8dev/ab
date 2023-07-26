@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { bucket: string } }) {
             A/B Testing with NextJS, Vercel, and Statsig
           </h1>
           <h3 className="text-red-500 pt-4 font-bold uppercase">
-            Your bucket: {bucket}
+            Your bucket: {bucket ? bucket : "control"}
           </h3>
           <p className="text-slate-400 pt-4">
             Performant experimentation with Statsig
@@ -56,10 +56,12 @@ export default function Page({ params }: { params: { bucket: string } }) {
           <div className="pt-4">
             <p>
               You are currently assigned to the{" "}
-              <span className="text-red-500">{bucket}</span> bucket. Click the
-              button below and refresh the page to be put in a different bucket.
-              The button resets the cookie. Upon refreshing the page, the
-              middleware will run and re-bucket you.
+              <span className="text-red-500">
+                {bucket ? bucket : "control"}
+              </span>{" "}
+              bucket. Click the button below and refresh the page to be put in a
+              different bucket. The button resets the cookie. Upon refreshing
+              the page, the middleware will run and re-bucket you.
             </p>
             <Button />
           </div>
