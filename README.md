@@ -1,5 +1,7 @@
 # A/B Testing & Experimentation with Statsig, NextJS, and Vercel
 
+<img width="1504" alt="Screenshot 2023-07-26 at 9 15 58 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/947c9d8f-cead-4cc8-8596-75d8cde487fc">
+
 This example shows how to do experimentation using Statsig, leveraging Edge Config and Edge Middleware. This example is an updated version of [Vercel's Statsig example](https://github.com/vercel/examples/tree/main/edge-middleware/ab-testing-statsig). It has been updated to use the NextJS 13 [App Router](https://nextjs.org/docs/app).
 
 ## Overview
@@ -57,7 +59,7 @@ export const EXPERIMENT = nextjs_test;
 Add a parameter to your experiment called `bucket`.
 Name your buckets. In this case, make sure that your `control` bucket is left blank. It doesn't matter what your name your variation, this page will be statically generated at build time. _See image below for example._
 
-<img width="1502" alt="Screenshot 2023-07-18 at 11 07 58 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/a964091e-0d84-450a-92fc-c0951241fecd">
+<img width="1490" alt="Screenshot 2023-07-26 at 9 12 24 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/86c401be-17c9-4c66-ac16-af59a9f48783">
 
 When you have completed your configuration, you can start the experiment.
 
