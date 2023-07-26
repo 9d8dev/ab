@@ -55,7 +55,7 @@ export const EXPERIMENT = nextjs_test;
 ```
 
 Add a parameter to your experiment called `bucket`.
-Name your buckets. For simplicity, keep the name of your control variable as the default `control`. It doesn't matter what your name your variation, this page will be statically generated at build time. _See image below for example._
+Name your buckets. In this case, make sure that your `control` bucket is left blank. It doesn't matter what your name your variation, this page will be statically generated at build time. _See image below for example._
 
 <img width="1502" alt="Screenshot 2023-07-18 at 11 07 58 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/a964091e-0d84-450a-92fc-c0951241fecd">
 
@@ -72,10 +72,6 @@ While this example does not yet support metrics, [Statsig has a client-side Reac
 ## Middleware
 
 This example utilizes middleware to direct traffic to the proper variation. See `middleware.ts` for more details.
-
-## Structure
-
-Include markdown structure of app...
 
 ## Contributions
 
