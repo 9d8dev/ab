@@ -1,6 +1,6 @@
 # A/B Testing & Experimentation with Statsig, NextJS, and Vercel
 
-<img width="1504" alt="Screenshot 2023-07-26 at 9 15 58 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/947c9d8f-cead-4cc8-8596-75d8cde487fc">
+<img width="1520" alt="Screenshot 2023-07-26 at 10 18 14 AM" src="https://github.com/9d8dev/ab-testing-statsig-app-router-template/assets/95453018/d27dbbfe-5eef-4d58-8244-efdc43c249cc">
 
 This example shows how to do experimentation using Statsig, leveraging Edge Config and Edge Middleware. This example is an updated version of [Vercel's Statsig example](https://github.com/vercel/examples/tree/main/edge-middleware/ab-testing-statsig). It has been updated to use the NextJS 13 [App Router](https://nextjs.org/docs/app).
 
